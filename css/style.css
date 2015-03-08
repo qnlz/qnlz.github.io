@@ -1,0 +1,25 @@
+/*global*/
+html{width: 100%;height: 100%;
+	-webkit-text-size-adjust:none;   /* 旋转时文字大小不会随之改变*/  
+	    -ms-text-size-adjust:none;
+	        text-size-adjust:none;}
+body{margin: 0;padding:0;width: 100%;height: 100%;background:#47c92f;color:#74777b;font-weight:300;font-size: 1.5em;font-family:'Microsoft yahei','Arial';}
+ul{list-style:none;padding: 0;margin:0;}
+a:link,a:visited,a:focus{text-decoration: none;outline: none;}
+*,*:after,*:before{
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+*:after,*:before{display: block;content:'';}
+*:after{clear: both;}
+
+
+/*Navgator*/
+.nav{width: 800px;height: 300px;margin:120px auto;}
+.nav li {display: inline-block;margin:0 1em;}
+.tooltip{position: relative;z-index:999;display: inline-block;font-weight:700;color: rgba(0,0,0,.3);padding:.15em .2em 0;}
+.tooltip-content{position: absolute;z-index:9999;left:50%;bottom:100%;margin:0 0 20px -40px;width:80px;height: 80px;border-radius:50%;background:rgba(255,255,255,1);text-align:center;padding-top:25px;color:#47c92f;}
+.tooltip-content::after{position: absolute;top:100%;left:50%;margin:-7px 0 0 -15px;display: block;content:'';width:30px;height: 20px;background:url(../img/tooltip.svg) no-repeat 0 0;
+-webkit-background-size: 100%;
+background-size: 100%;
+}
