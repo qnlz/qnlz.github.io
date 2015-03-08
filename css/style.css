@@ -17,9 +17,31 @@ a:link,a:visited,a:focus{text-decoration: none;outline: none;}
 /*Navgator*/
 .nav{width: 800px;height: 300px;margin:120px auto;}
 .nav li {display: inline-block;margin:0 1em;}
-.tooltip{position: relative;z-index:999;display: inline-block;font-weight:700;color: rgba(0,0,0,.3);padding:.15em .2em 0;}
-.tooltip-content{position: absolute;z-index:9999;left:50%;bottom:100%;margin:0 0 20px -40px;width:80px;height: 80px;border-radius:50%;background:rgba(255,255,255,1);text-align:center;padding-top:25px;color:#47c92f;}
-.tooltip-content::after{position: absolute;top:100%;left:50%;margin:-7px 0 0 -15px;display: block;content:'';width:30px;height: 20px;background:url(../img/tooltip.svg) no-repeat 0 0;
--webkit-background-size: 100%;
+.tooltip{position: relative;z-index:999;display: inline-block;font-weight:700;color: rgba(0,0,0,.3);padding:.15em .2em 0;
+-webkit-transition:color 0.3s;
+        transition:color 0.3s;
+}
+.tooltip-content{position: absolute;z-index:9999;left:50%;bottom:100%;margin:0 0 20px -40px;width:80px;height: 80px;border-radius:50%;background:rgba(255,255,255,1);text-align:center;padding-top:25px;color:#47c92f;opacity:0;
+	-webkit-transform:translate3D(0,10px,0) rotate3D(1,1,1,45deg);
+	        transform:translate3D(0,10px,0) rotate3D(1,1,1,45deg);
+	-webkit-transform-origin:50% 100%;
+	        transform-origin:50% 100%;
+	-webkit-transition:all .3s;
+	transition:all .3s;
+}
+.tooltip-content i {opacity: 0;
+-webkit-transform:scale3D(0,0,1);
+        transform:scale3D(0,0,1);
+-webkit-transition:all .3s;
+	transition:all .3s;
+}
+.tooltip-content::after{position: absolute;top:100%;left:50%;margin:-7px 0 0 -15px;display: block;content:'';width:30px;height: 20px;background:url(../img/tooltip.svg) no-repeat 0 -20px;
 background-size: 100%;
 }
+.tooltip:hover{color:rgba(255,255,255,1)}
+.tooltip:hover .tooltip-content,
+.tooltip:hover .tooltip-content i{opacity:1;
+-webkit-transform:translate3D(0,0,0) rotate3D(1,1,1,0deg) scale3D(1,1,1);
+	    transform:translate3D(0,0,0) rotate3D(1,1,1,0deg) scale3D(1,1,1);
+}
+
