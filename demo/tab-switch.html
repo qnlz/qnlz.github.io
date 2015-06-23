@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tab switch</title>
+	<style type="text/css">
+	/*reset*/
+	html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,em,button{margin:0;padding:0;}
+	body{ font:12px/1.5 arial,Simsun, sans-serif; color:#333; background-color: #fff; }
+	img, fieldset{border:none;vertical-align:middle;}
+	input, textarea{font-size:12px;}
+	table{border-collapse:collapse;}
+	a{color:#3983E5;text-decoration:none;}
+	a:hover{text-decoration:underline;}
+
+	h1,h2,h3,h4,h5{font-family:"Times New Roman",Simsun;}
+	ul,ol{list-style:none;}
+	input[type="button"],input[type="submit"]{-webkit-appearance:none;}
+	input[type="text"]{border-radius:0;}
+	.hide{display: none;}
+	.iefix-bg{position:absolute;height:33px;bottom:0;width:100%;background:#000\9;filter:alpha(opacity=40)\9;opacity:0.4\9;z-index:1\9;}   /*IE6/7/8 alpha bugfix */
+	:root .iefix-bg{display:none\9;}  /*IE9 alpha bugfix */
+
+
+		/* 
+		module 
+		*/
+		/* mod */
+		.mod{width:1180px;margin:28px auto 0;}
+		.mod-hd {position: relative;z-index:10;height:36px;padding-left:11px;border-bottom:2px solid #3983e5;text-align:left;}
+		.mod-bd{background: #fff;border: 1px solid #e0e0e0;border-top:none;overflow:hidden;}
+		.mod-bd:before,.mod-bd:after,.mod:before,.mod:after{ display: table; content: ""; line-height: 0;}
+		.mod-bd:after,.mod:after{ clear: both;}
+		.car .mod-bd{height:220px;overflow:hidden;}
+
+		/* mod title */
+		.mod .title{font:16px/26px  "Microsoft YaHei", "SimHei", SimSun, Tahoma, Verdana, Arial, sans-serif;}
+		.mod .title span {position:relative;bottom:-3px;float:left;height:36px;line-height:30px;color: #333; margin-right:30px; cursor: pointer; }
+		.mod .title span a{color:#333;text-decoration: none;}
+		.mod .title i{position: absolute;left:50%;margin-left:-3px;bottom:3px;display:none;width:0;height:0;overflow:hidden;line-height:0;font-size:0;
+		vertical-align:middle;
+		border-bottom:6px solid #3983e5;
+		border-top:0 none;
+		border-left:6px solid transparent;
+		border-right:6px solid transparent;
+		_color:#FF3FFF;
+		_filter:chroma(color=#FF3FFF);}
+		.mod .title .current,.title:hover {color: #06C;}
+		.mod .title .current i{display: inline-block;}
+		.mod .entrance{position: relative;float: left;display:inline;width:187px;height:360px;padding:0 20px 15px;overflow:hidden;}
+		.mod .entrance a{color:#666;}
+		.mod .entrance a:hover{text-decoration: underline;color:#3983e6;}
+		.mod .product{position: relative;*zoom:1;height:360px;margin-left:229px;padding:15px 19px;border-left: 1px dotted #a3a3a3;}
+
+		/* entrance */
+		.entrance dl{margin:0px 0 7px 0;overflow:hidden;position: relative;}
+		.entrance dt{padding:4px 0 0 0;font:700 14px/34px "Microsoft yahei" ;}
+		.entrance dd{margin-left:-10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position: relative;zoom:1;}
+		.entrance dd:before,.entrance dd:after{ display: table; content: ""; line-height: 0;}
+		.entrance dd:after{ clear: both;}
+		.entrance .entrance-item{position:relative;float: left;display:block; border-left:1px solid #ececec;padding:0 10px;line-height:18px;height:18px;margin:7px 0;*margin:8px 0;}
+		.entrance .entrance-item .icon_hot{position: absolute;top:-6px;right:3px;}
+		.keyword-long a{display:block;width:187px;white-space: nowrap;overflow:hidden;text-overflow:ellipsis;}
+		.keyword-short a{display: inline-block;max-width:72px;}
+
+		/* item-list */
+		.list-wrap:before,.list-wrap:after{ display: table; content: ""; line-height: 0;}
+		.list-wrap:after{ clear: both;}
+		.inner-tab-panel{position: relative;padding-right:220px;margin-left:-10px;}
+		.inner-tab-panel_noextra{padding-right:0;}
+		.product-item{position:relative;_zoom:1;width:220px;height: 165px;float: left;_display:inline;margin:0 0 10px 10px;overflow:hidden;}
+		.product-item a{text-decoration: none;color:#666;}
+		.product-item a:hover{text-decoration: none;}
+		.item-thumbnail{position:relative;width:220px;height:110px;margin-bottom:3px;overflow:hidden;}
+		.item-thumbnail img{transition:transform 0.3s ease 0s;width:220px;}
+		a:hover .item-thumbnail img{
+			-webkit-transform:scale(1.05);
+			  transform:scale(1.05);
+		}
+		.item-thumbnail .tag{position: absolute;top:0;left:10px;}
+		.item-overlay{position: absolute;z-index:2;width: 100%;height: 25px;line-height:25px;left:0;bottom:0;background:rgba(0,0,0,0.5);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+		.item-overlay .tag_orange{margin:0 6px 0 4px;}
+		.item-overlay .iefix-bg{z-index:-1;height:200px;top:0;left:0;}
+		.item-name{height: 16px;line-height:16px;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+		.item-name:hover,.item-name a:hover{text-decoration: underline;color:#3983e5;}
+		.item-name-space{padding-right:20px;}
+		.item-type{display: block;color:#999;line-height:35px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-align:left;}
+		a.item-type{color:#999;}
+		a.item-type:hover{text-decoration:underline;}
+		.item-info{position: relative;height:35px;text-align:right;}
+		.item-info .diamond{position:absolute;left:0;top: 50%;margin-top:-4px;}
+		.item-label{float: right;overflow:hidden;margin:7px 0 0;}
+		.item-label span+span{margin-left:5px;}
+
+
+		/* product tabs */
+		.inner-tabs{padding-right:220px;}
+		.inner-tabs-nav{height:20px;margin-bottom:10px;}
+		.inner-tabs-nav:before,.inner-tabs-nav:after{ display: table; content: ""; line-height: 0;}
+		.inner-tabs-nav:after{ clear: both;}
+		.inner-tabs-nav li{float:left;display:inline-block;line-height:20px;margin-right:15px;padding:0 8px;}
+		.inner-tabs-nav li.active{background:#3983e5;color:#fff;border-radius:3px;}
+		.inner-tabs-nav li.active a{color:#fff;}
+		.inner-tabs-nav li a{color:#3983e5;z-index:81;}
+		.inner-tabs-nav li .dropdown{width:40px;}
+		.inner-tabs-nav li .dropdown-cont{z-index:80;}
+	</style>
+</head>
+<body>
+<div class="mod car">
+	<div class="mod-hd">
+		<h2 class="title">
+			<span class="current">国际租车<i></i></span>
+			<span>国际接送机<i></i></span>
+			<span>国内租车<i></i></span>
+			<span>国内接送机<i></i></span>
+			<span>日租包车<i></i></span>
+		</h2>
+	</div>
+	<div class="mod-bd">
+		<div class="mod-bd-panel">
+			<!-- entrance start -->
+			 <div class="entrance">
+			 	<dl class="keyword-short">
+			 		<dt>热门目的地</dt>
+			 		<dd>
+			 			<span class="entrance-item"><a href="###">夏威夷</a><span class="icon_hot"></span></span>
+			 			<span class="entrance-item"><a href="###">香港</a></span>
+			 			<span class="entrance-item"><a href="###">台北</a></span>
+						<span class="entrance-item"><a href="###">墨尔本</a></span>
+						<span class="entrance-item"><a href="###">索菲亚</a><span class="icon_hot"></span></span>
+						<span class="entrance-item"><a href="###">阿布扎比</a></span>
+						<span class="entrance-item"><a href="###">暹罗</a></span>
+						<span class="entrance-item"><a href="###">东京</a></span>
+						<span class="entrance-item"><a href="###">普吉岛</a></span>
+						<span class="entrance-item"><a href="###">夏威夷</a><span class="icon_hot"></span></span>
+						<span class="entrance-item"><a href="###">墨尔本</a></span>
+						<span class="entrance-item"><a href="###">巴黎</a></span>
+						<span class="entrance-item"><a href="###">阿布扎比</a></span>
+						<span class="entrance-item"><a href="###">清迈</a></span>
+			 		</dd>
+			 	</dl>
+			 </div>
+			<!-- entrance end -->
+
+			<!-- procudt start -->
+			<div class="product ">
+				<div class="product-hd">
+					<ul class="inner-tabs-nav">
+			 			<li class="active"><a href="###">热门</a></li>
+				 		<li><a href="###">大阪</a></li>
+				 		<li><a href="###">江道源</a></li>
+				 		<li><a href="###">索菲亚</a></li>
+			 		</ul>
+				</div>
+				<div class="product-bd">
+					<div class="inner-tab-panel active">
+						<div class="product-item">
+							<a href="###">
+								<p class="item-thumbnail">
+									<img src="http://pic.c-ctrip.com/index/temp/zzz_car_01.jpg" alt="澳大利亚">
+								</p>
+								<p class="item-name">经济型轿车</p>
+								<p class="item-info">
+									<span class="price"><dfn>&yen;</dfn>538<i class="price_info">起</i></span>
+									<span class="item-type">尼桑Maxima或类似车型尼桑Maxima或类似车型</span>
+								</p>
+							</a>
+						</div>
+						<div class="product-item">
+							<a href="###">
+								<p class="item-thumbnail">
+									<img src="http://pic.c-ctrip.com/index/temp/zzz_car_02.jpg" alt="澳大利亚">
+								</p>
+								<p class="item-name">经济型轿车</p>
+								<p class="item-info">
+									<span class="price"><dfn>&yen;</dfn>538<i class="price_info">起</i></span>
+									<span class="item-type">尼桑Maxima或类似车型</span>
+								</p>
+							</a>
+						</div>
+						<div class="product-item">
+							<a href="###">
+								<p class="item-thumbnail">
+									<img src="http://pic.c-ctrip.com/index/temp/zzz_car_03.jpg" alt="澳大利亚">
+								</p>
+								<p class="item-name">经济型轿车</p>
+								<p class="item-info">
+									<span class="price"><dfn>&yen;</dfn>538<i class="price_info">起</i></span>
+									<span class="item-type">尼桑Maxima或类似车型</span>
+								</p>
+							</a>
+						</div>
+						<div class="product-item">
+							<a href="###">
+								<p class="item-thumbnail">
+									<img src="http://pic.c-ctrip.com/index/temp/zzz_car_04.jpg" alt="澳大利亚">
+								</p>
+								<p class="item-name">经济型轿车</p>
+								<p class="item-info">
+									<span class="price"><dfn>&yen;</dfn>538<i class="price_info">起</i></span>
+									<span class="item-type">尼桑Maxima或类似车型</span>
+								</p>
+							</a>
+						</div>
+		 			</div>
+				</div>
+			 </div>
+			<!-- procudt end -->
+		</div>
+	</div>
+</div>	
+
+
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script  type="text/javascript">
+    //tab
+	$(".mod").each(function(i,el){
+		var $this = $(this),
+			aHd = $this.find(".mod-hd:eq(0)").find("span"),
+			aBd = $this.find(".mod-bd:eq(0)").find(".mod-bd-panel");
+		aHd.on("click",function(){
+			var index = aHd.index($(this));
+			aHd.removeClass("current").eq(index).addClass("current");
+			aBd.hide().eq(index).show();
+		})
+	})
+	$(".product").each(function(i,el){
+		var $this = $(this),
+			aHd = $this.find(".product-hd:eq(0)").find("li"),
+			aBd = $this.find(".product-bd:eq(0)").find(".inner-tab-panel");
+		aHd.on("click",function(){
+			// var index = aHd.index($(this));
+			// aHd.removeClass("active").eq(index).addClass("active");
+			// aBd.hide().eq(index).show();
+			if(!$(this).hasClass('dropdown-li')){
+				var index = aHd.index($(this));
+				aHd.removeClass("active").eq(index).addClass("active");
+				aBd.hide().eq(index).show();
+			}
+		})
+	});
+	</script>
+</body>
+</html>
