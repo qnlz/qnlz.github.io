@@ -17,3 +17,5 @@ css实现阴影的多种情况
 4. [左右两侧内容自适应](http://qnlz.github.io/demo/left-and-right-flex.html)
 ---------------------
 左右两侧内容自适应，参考bootstrap(http://getbootstrap.com/components/#input-groups)
+
+利用table-cell的原理
