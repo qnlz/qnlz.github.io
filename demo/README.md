@@ -1,6 +1,6 @@
 demo目录
 ==============
-1. [retina-1px.html](http://http://qnlz.github.io/demo/retina-1px.html)
+1. [retina-1px.html](http://qnlz.github.io/demo/retina-1px.html)
 ---------------------
 retina下1px解决方案
 
