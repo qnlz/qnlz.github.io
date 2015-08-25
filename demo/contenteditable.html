@@ -6,7 +6,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<style type="text/css" media="screen">
-		div{
+	.comment{
+		position:fixed;
+		bottom:0;
+		left:5px;
+		right:5px;
+		padding:5px;
+		box-sizing:border-box;
+	}
+	.comment>div{
 			min-height:20px;
 			max-height:100px;
 			overflow-y:auto;
@@ -16,22 +24,14 @@
 			box-sizing:border-box;
 			border:1px solid #999;
 			border-radius:3px;
-			position:fixed;
-			bottom:0;
-<<<<<<< HEAD
-			left:5px;
-			right:5px;
-=======
-			left:0;
-			right:0;
->>>>>>> a3b24a6a217529e52fd5079c64e252ccf3727da3
 		}
 	</style>
 </head>
 <body>
-
-<div contenteditable="true">
-	
+<div class="comment">
+	<div  contenteditable="true">
+		
+	</div>
 </div>
 	
 </body>
