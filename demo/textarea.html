@@ -6,9 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
 	<style type="text/css" media="screen">
-		div{
-			min-height:20px;
-			max-height:100px;
+	.comment{
+		position:fixed;
+		bottom:0;
+		left:5px;
+		right:5px;
+		padding:5px;
+		box-sizing:border-box;
+	}
+		textarea{
+			height:30px;
 			overflow-y:auto;
 			line-height:20px;
 			width:100%;
@@ -16,18 +23,12 @@
 			box-sizing:border-box;
 			border:1px solid #999;
 			border-radius:3px;
-			position:fixed;
-			bottom:0;
-			left:5px;
-			right:5px;
 		}
 	</style>
 </head>
 <body>
-
-<div contenteditable="true">
-	
+<div class="comment">
+	<textarea name=""></textarea>
 </div>
-	
 </body>
 </html>
