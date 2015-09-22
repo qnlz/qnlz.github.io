@@ -19,3 +19,7 @@ css实现阴影的多种情况
 左右两侧内容自适应，参考bootstrap(http://getbootstrap.com/components/#input-groups)
 
 利用table-cell的原理
+
+5. [楼层电梯导航](http://qnlz.github.io/demo/lift.html)
+---------------------
+主要知识点：offset().top   scrollTop()
