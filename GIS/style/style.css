@@ -1,0 +1,272 @@
+/**
+* reset default style
+* Unified elements bring the style, so that the browser to see the same.
+*/
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+em,
+button {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #fff;
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: microsoft yahei, tahoma, simsun, sans-serif;
+	color: #333;
+}
+
+img,
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+input,
+textarea {
+	font-size: 12px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+dfn {
+	font-style: normal;
+	font-family: Arial;
+}
+
+em {
+	font-style: normal;
+}
+
+a {
+	color: #06c;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.layoutfix {
+	display: block;
+	overflow: hidden;
+}
+
+
+/**
+ * clearfix
+ * Clearing the layout of the floating
+ */
+.clearfix:after {
+    clear: both;
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    line-height: 0
+}
+.clearfix {*zoom:1}
+
+
+/**
+ * button
+ */
+
+
+/**
+ * form
+ */
+
+
+/**
+ * icon
+ * All the icons on the page are concentrated here, easy to check.
+ * All the icons begin with icon, and add to the icon.
+ */
+.icon-system-green,
+.icon-system-red {
+	display: inline-block;
+	width: 14px;
+	height: 15px;
+	background-image: url(../images/system-status.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+.icon-system-green {background-position: 0 0;}
+.icon-system-red {background-position: -14px 0;}
+
+
+
+/**
+ * layout
+ * The overall layout of the page, you can change here, including the loading page, login page and scheduling system page.
+ */
+.container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #001c2f;
+	font: normal 14px/1.5 "microsoft yahei";
+}
+
+/* header */
+.header {
+	position: absolute;
+	height: 48px;
+	left: 70px;
+	top: 0;
+	right: 0;
+	padding-left:12px;
+	padding-right:15px;
+	background: -moz-linear-gradient(0deg, #00243d, #005591);
+  background: -webkit-gradient(linear,0 50%,100% 50%,from(#00243d),to(#005591));
+  background: -webkit-linear-gradient(0deg, #00243d, #005591);
+  background: -o-linear-gradient(0deg, #00243d, #005591);
+  line-height: 48px;
+  color: #fff;
+}
+.title {
+	font-size: 18px;
+	font-family: "microsoft yahei";
+	font-weight: normal
+}
+.user-info {
+	position: absolute;
+	top: 0;
+	right: 15px;
+}
+.login-time,
+.login-user {
+	display: inline-block;
+}
+.login-out { color:#fff;}
+
+/* left menu */
+.menu-wrap {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 60px;
+	background-color: #005591;
+}
+.logo {
+	display: inline-block;
+	width: 70px;
+	height: 0px;
+	margin-bottom:2px;
+	background: #00243d url(../images/logo.png) no-repeat 0 0;
+	padding-top: 60px;
+	overflow: hidden;
+}
+
+.menu-tab {margin-top: 14px;}
+.menu-tab li {height: 60px;}
+.menu-tab a {
+	display: inline-block;
+	width: 60px;
+	height: 0px;
+	padding-top: 60px;
+	overflow: hidden;
+	background-image: url(../images/menu-tab.png);
+	background-repeat: no-repeat;
+}
+.menu-tab a.menu-map { background-position: 0 0;}
+.menu-tab a.menu-monitor { background-position: 0 -60px;}
+.menu-tab a.menu-history { background-position: 0 -120px;}
+.menu-tab a.menu-setting { background-position: 0 -180px;}
+
+.menu-tab a:hover.menu-map,
+.menu-tab li.selected a.menu-map { background-position: -60px 0;}
+.menu-tab a:hover.menu-monitor { background-position: -60px -60px;}
+.menu-tab a:hover.menu-history { background-position: -60px -120px;}
+.menu-tab a:hover.menu-setting { background-position: -60px -180px;}
+
+/* menu status */
+.stystems-status {
+	position: absolute;
+	bottom: 20px;
+	font-size: 12px;
+}
+.stystems-status .status {
+	display: block;
+	margin-bottom: 3px;
+	padding-left: 23px;
+	color: #fff;
+}
+.stystems-status .status .icon {
+ margin-left:-18px;
+ margin-right:2px;
+}
+
+/**
+ * login pageStyle
+ */
+.login-wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	margin-top: -175px;
+	margin-left: -112px;
+	width: 225px;
+	min-height: 350px;
+}
+.login-form {margin-top: 195px;}
+.form-line {margin-bottom: 18px;}
+.form-text {
+	width: 100%;
+	height:  27px;
+	line-height: 27px;
+	padding: 0 12px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing   : border-box;
+	box-sizing        : border-box;
+}
+

@@ -1,46 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-	<title>湖南省武警总队调度系统</title>
-	<link rel="stylesheet" href="style/style.css">
-</head>
-<body>
-<div class="container">
-  <!-- 左侧导航 -->
-  <div class="side-wrap">
-    <div class="menu-wrap">
-      <a href="##" class="logo">湖南省武警总队调度系统</a>
-      <ul class="menu-tab">
-        <li><a href="" class="menu-"></a></li>
-        <li><a href="" class="menu-"></a></li>
-        <li><a href="" class="menu-"></a></li>
-        <li><a href="" class="menu-"></a></li>
-      </ul>
-      <div class="menu-staus">
-        <a href="##" class="st-mdcs"></a>
-        <a href="##" class="st-gis"></a>
-        <a href="##" class="st-vss"></a>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+  	<title>湖南省武警总队调度系统</title>
+  	<link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+  <div class="container">
+
+    <!-- 头部 -->
+    <div class="header">
+      <h1 class="title">湖南省武警总队调度系统</h1>
+      <div class="user-info">
+        <div class="login-time">
+          <i class="icon-clock"></i>2015/05/07 &nbsp;&nbsp; 11:20
+        </div>
+        <div class="login-user">
+          <i class="icon-person"></i>Admin
+          <a class="login-out" href="javascript:;">退出</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- topbar -->
-  <div class="top-bar">
-    <h1>湖南省武警总队调度系统</h1>
-    <div class="user-info">
-      <div class="login-tim"><i class="icon-clock"></i>2015/05/07 11:20</div>
-      <div class="login-user">
-        <i class="icon-person"></i>Admin
-        <a href="javascript:;" class="login-out">退出</a>
+    <!-- 左侧导航 -->
+    <div class="side-wrap">
+      <div class="menu-wrap">
+        <a class="logo" href="##">湖南省武警总队调度系统</a>
+        <ul class="menu-tab">
+          <li class="selected"><a class="menu-map" href="##">地图</a></li>
+          <li><a class="menu-monitor" href="##">视频监控</a></li>
+          <li><a class="menu-history" href="##">录像历史</a></li>
+          <li><a class="menu-setting" href="##">设置</a></li>
+        </ul>
+        <div class="stystems-status">
+          <span class="status"><i class="icon icon-system-green"></i>MDCS</span>
+          <span class="status"><i class="icon icon-system-green"></i>GIS</span>
+          <span class="status"><i class="icon icon-system-red"></i>VSS</span>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- 右侧地图区域 -->
-  <div class="map-area">
-  	
-  </div>
-</div>	
-</body>
+      <!-- 调度对象 -->
+      <div class="menu-panel">
+        <div class="menu-map-header">
+          调度对象
+          <div class="tools-entry">
+            <a class="search" href="##"><i class="icon icon-search"></i>查找</a>
+            <a class="filter" href="##"><i class="icon icon-filter"></i>筛选</a>
+            <a class="refresh" href="##"><i class="icon icon-refresh"></i>刷新</a>
+            <a class="" href="##">收起</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 右侧地图区域 -->
+    <div class="map-area">
+    	
+    </div>
+  </div>	
+  </body>
 </html>
