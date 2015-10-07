@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+  	<title>湖南省武警总队调度系统</title>
+  	<link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
+    <!-- 点击logo弹出菜单 -->
+    <div class="dropdown-pop">
+      <ul class="dropdown-list">
+        <li><a href="##">关于</a></li>
+        <li><a href="##">帮助</a></li>
+        <li class="line-divide"></li>
+        <li><a href="##">锁屏</a></li>
+        <li><a href="##">退出</a></li>
+      </ul>
+    </div>
+
+    <!-- 按类型筛选对象 -->
+    <div class="dropdown-pop">
+      <ul class="dropdown-list refresh-list">
+        <li class="selected"><i class="icon icon-selected"></i>群组</li>
+        <li class="selected"><i class="icon icon-selected"></i>用户</li>
+        <li class="selected"><i class="icon icon-selected"></i>摄像头</li>
+      </ul>
+    </div>
+    
+    <!-- 快捷菜单操作 -->
+    <div class="dropdown-pop">
+      <ul class="dropdown-list">
+        <li><a href="##">呼叫</a></li>
+        <li><a href="##">发消息</a></li>
+        <li><a href="##">定位</a></li>
+        <li><a href="##">视频上拉</a></li>
+        <li><a href="##">详情</a></li>
+      </ul>
+    </div>
+
+
+    <!-- map tips -->
+    <div class="map-tips">
+      <ul class="user-info-list">
+        <li>
+           <span class="name">李涛</span>
+          X25006
+        </li>
+        <li>
+          <span class="name">车台</span>
+          80081234 
+          <i class="icon icon-lte"></i>
+        </li>
+        <li>
+          <span class="name">手机</span>
+          18600981242
+          <i class="icon icon-signal"></i>
+        </li>
+        <li>
+          <span class="name">机动车</span>
+          湘A23BC8
+        </li>
+      </ul>
+    </div>
+
+    <!-- 
+    单击图标出现快捷操作菜单
+    （呼叫、发消息、视频上拉、轨迹回放、查看详情、清除）
+
+    定位的时候右边藏到图标下面
+     -->
+    <div class="map-menu-shortcut">
+      <ul class="shortcut-list">
+        <li><a href="##"><i class="icon icon-menu-call"></i></a></li>
+        <li><a href="##"><i class="icon icon-menu-mesg"></i></a></li>
+        <li><a href="##"><i class="icon icon-menu-pull"></i></a></li>
+        <li><a href="##"><i class="icon icon-menu-trace"></i></a></li>
+        <li><a href="##"><i class="icon icon-menu-detail"></i></a></li>
+        <li><a href="##"><i class="icon icon-menu-del"></i></a></li>
+      </ul>
+    </div>
+
+
+    <!-- 
+    点击菜单按钮弹出该面板
+     -->
+    <div class="map-menu-panel">
+      <div class="map-panel-tab-header">
+        <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+        <ul class="tab-title">
+          <li class="current"><a href="##"><i class="icon icon-menu-detail"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-pull"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-mesg"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-call-ing"></i></a></li>
+        </ul>
+      </div>
+      <div class="map-panel-tab-content">
+        <div class="user-detail">
+          <!-- 默认会有一张背景头像，上传以后会覆盖在上面 -->
+          <img class="avatar-big" src="" alt="" >  
+          <ul class="user-info-list">
+            <li>
+               <span class="name">李涛</span>
+              X25006
+            </li>
+            <li>
+              <span class="name">车台</span>
+              80081234 
+              <i class="icon icon-lte"></i>
+            </li>
+            <li>
+              <span class="name">手机</span>
+              18600981242
+              <i class="icon icon-signal"></i>
+            </li>
+            <li>
+              <span class="name">机动车</span>
+              湘A23BC8
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+     <!-- 
+    视频上拉过程
+     -->
+    <div class="map-menu-panel">
+      <div class="map-panel-tab-header">
+        <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+        <ul class="tab-title">
+          <li><a href="##"><i class="icon icon-menu-detail"></i></a></li>
+          <li class="current"><a href="##"><i class="icon icon-menu-pull"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-mesg"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-call-end"></i></a></li>
+        </ul>
+      </div>
+      <div class="map-panel-tab-content">
+        <div class="video-pull-loading">
+          <i class="icon icon-loading"></i>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 
+    视频上拉成功
+     -->
+    <div class="map-menu-panel">
+      <div class="map-panel-tab-header">
+        <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+        <ul class="tab-title">
+          <li><a href="##"><i class="icon icon-menu-detail"></i></a></li>
+          <li class="current"><a href="##"><i class="icon icon-menu-pull"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-mesg"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-call"></i></a></li>
+        </ul>
+      </div>
+      <div class="map-panel-tab-content">
+        <div class="video-pull-success">
+          <div class="video-info">
+            00:05:23&nbsp;&nbsp;720kbps
+          </div>
+          <ul class="video-tools">
+            <li><a href="##"><i class="icon icon-mute"></i></a></li>
+            <li><a href="##"><i class="icon icon-sound-record"></i></a></li>
+            <li><a href="##"><i class="icon icon-screen-record"></i></a></li>
+            <li><a href="##"><i class="icon icon-screenshot"></i></a></li>
+            <li><a href="##"><i class="icon icon-screen-remove"></i></a></li>
+            <li><a href="##"><i class="icon icon-pull-cancel"></i></a></li>
+            <li><a href="##"><i class="icon icon-distribution"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 
+    对话模式
+     -->
+    <div class="map-menu-panel">
+      <div class="map-panel-tab-header">
+        <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+        <ul class="tab-title">
+          <li><a href="##"><i class="icon icon-menu-detail"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-pull"></i></a></li>
+          <li class="current"><a href="##"><i class="icon icon-menu-mesg"></i></a></li>
+          <li><a href="##"><i class="icon icon-menu-call"></i></a></li>
+        </ul>
+      </div>
+      <div class="map-panel-tab-content">
+        <div class="dialogue-box">
+          <ul class="dialogue-list">
+            <li class="dialogue-q">
+              <span class="avatar-q"></span>
+              <div class="dialogue-text">
+                请发送一张现场图片
+              </div>
+            </li>
+            <li class="dialogue-a">
+              <span class="avatar-a"></span>
+              <div class="dialogue-text">
+                请发送一张现场图片
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
