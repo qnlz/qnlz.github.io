@@ -40,6 +40,7 @@ body {
 	line-height: 1.5;
 	font-family: microsoft yahei, tahoma, simsun, sans-serif;
 	color: #333;
+	-webkit-font-smoothing:antialiased;
 }
 
 img,
@@ -110,7 +111,9 @@ a:hover {
 .clearfix {*zoom:1}
 .pull-left { float: left;}
 .pull-right { float: right;}
-
+.ta-l { text-align: left;}
+.ta-c { text-align: center;}
+.ta-r { text-align: right;}
 
 /**
  * button
@@ -120,7 +123,15 @@ a:hover {
 /**
  * form
  */
-
+.input-sm {
+	width: 22px;
+	height: 14px;
+	padding: 5px;
+	line-height: 14px;
+	background-color: #fff;
+	border: 1px solid #c0c6c9;
+	border-radius: 3px;
+}
 
 /**
  * icon
@@ -162,7 +173,14 @@ a:hover {
 .icon-lte,
 .icon-signal,
 .icon-2g,
-.icon-3g {
+.icon-3g,
+.icon-older,
+.icon-previous,
+.icon-next,
+.icon-newer,
+.icon-play,
+.icon-pause,
+.icon-return {
 	display: inline-block;
 	background-image: url(../images/sprite-icon.png);
 	background-repeat: no-repeat;
@@ -491,6 +509,41 @@ a:hover {
 	height: 8px;
 	background-position: -46px -373px;
 }
+.icon-older,
+.icon-previous,
+.icon-next,
+.icon-newer{
+	width: 26px;
+	height: 27px;
+}
+.icon-older { background-position: 0 -260px}
+.icon-older:hover { background-position: -28px -260px}
+.icon-older.disable,
+.icon-older.disable:hover { background-position: -56px -260px}
+.icon-previous { background-position: 0 -288px;}
+.icon-previous:hover { background-position: -28px -288px}
+.icon-previous.disable,
+.icon-previous.disable:hover { background-position: -56px -288px}
+.icon-next { background-position: 0 -316px;}
+.icon-next:hover { background-position: -28px -316px}
+.icon-next.disable,
+.icon-next.disable:hover { background-position: -56px -316px}
+.icon-newer { background-position: 0 -344px;}
+.icon-newer:hover { background-position: -28px -344px}
+.icon-newer.disable,
+.icon-newer.disable:hover { background-position: -56px -344px}
+.icon-play,
+.icon-pause,
+.icon-return{
+	width: 20px;
+	height: 20px;
+}
+.icon-play { background-position: -120px -260px;}
+.icon-play:hover { background-position: -100px -260px;}
+.icon-pause { background-position: -120px -280px;}
+.icon-pause:hover { background-position: -100px -280px;}
+.icon-return { background-position: -120px -300px;}
+.icon-return:hover { background-position: -100px -300px;}
 .icon-user-online { background-position: 0 0;}
 .icon-user-pull { background-position: 0 -32px;}
 .icon-user-warn { background-position: 0 -64px;}
@@ -641,7 +694,7 @@ a:hover {
 .title {
 	font-size: 16px;
 	font-family: "microsoft yahei";
-	font-weight: normal
+	font-weight: 600;
 }
 .user-info {
 	position: absolute;
@@ -1193,13 +1246,15 @@ a:hover {
 	text-align: right;
 }
 .history-list { 
-	margin-left:20px;
-	margin-right:20px;
-}
-.history-table {
-	background-color: #fff;
+	position: absolute;
+	bottom:52px;
+	top: 44px;
+	left:20px;
+	right:20px;
 	border-top:2px solid #c0c6c9;
 	border-bottom:2px solid #c0c6c9;
+	background-color: #fff;
+	overflow-y: scroll;
 }
 .history-table thead th,
 .history-table tbody td {
@@ -1215,9 +1270,33 @@ a:hover {
 .history-table tbody td {
 	border-bottom: 1px solid #eee;
 }
+.history-table thead th:nth-child(1),
+.history-table tbody td:nth-child(1){
+	border-right: 1px solid #eee;
+}
 .history-table tbody tr:hover {
 	background-color: #a4e1ff;
 }
+.history-footer {
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	right: 20px;
+	height: 52px;
+	text-align: center;
+	line-height: 52px;
+	color: #c0c6c9;
+}
+.pagination {
+	position: absolute;
+	left: 0;
+}
+.pagination li {
+	float: left;
+	margin-right: 4px;
+}
+.pagination li.previous { margin-right: 10px;}
+.pagination li.next { margin-left: 20px;}
 
 
 /**
@@ -1244,4 +1323,5 @@ a:hover {
 	-moz-box-sizing   : border-box;
 	box-sizing        : border-box;
 }
+
 
