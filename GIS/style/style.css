@@ -450,7 +450,7 @@ a:hover {
 .tab-header li a.message{ background-position: -200px 0;}
 .tab-header li a.message:hover{ background-position: -200px -44px;}
 
-.tab-panel { padding-left: 15px;}
+.tab-panel { padding-left: 10px;}
 .tab-panel .icon {
 	margin-right: 5px;
 }
