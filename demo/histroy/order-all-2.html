@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全部订单</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta name="format-detection" content="telephone=no" />
+	<link href="http://webresource.c-ctrip.com/styles/h5/common/main.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/myctrip-mobile.css" />
+    <script src="js/jquery.js"></script>
+</head>
+<body class="order-all-bg">
+	<div style="height:44px;">
+        <div class="cm-header">
+            <span class="icon-back fl cm-header-icon"></span>
+            <span class="fr cm-header-btn">地图</span>
+            <span class="fr cm-header-btn">日历</span>
+            <h1 class="cm-page-select-title">一年内订单</h1>
+        </div>
+        <div class="submenu">
+            <span>一年内订单</span>
+            <span>历史订单</span>
+        </div>
+	</div>
+	<section class="order-wrap-all">
+        <div class="loading-item-t1" style="display: none;">刷新中&nbsp;&nbsp;今天&nbsp;00:00</div>
+        <ul class="order-list-all" style=""><!--请把500px改成设备的高度-->
+            <li class="bu-hotel active">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>887</span>
+                        <span class="status">待支付</span>
+                    </div>
+                    <p class="tit">Villa Berawa(本拉瓦别墅酒店)</p>
+                    <p class="desc">11-25 至 11-27&emsp;2晚/1间 </p>
+                    <p class="desc-s">Jalan Pantai Berwa, B anjar Berwa</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-pri">去付款</span>
+                    <span class="btn-sec">操作操作</span>
+                    <span class="btn-sec">操作操</span>
+                    <span class="btn-sec">操作操</span>
+                </div>
+            </li>
+            <li class="bu-train">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>187</span>
+                        <span class="status light">已成交</span>
+                    </div>
+                    <p class="tit">上海火车站 - 北京火车站</p>
+                    <p class="desc">07-15 18:00 至 07-16 03:00</p>
+                    <p class="desc-s">K1876、K177等</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-pri disabled">操作</span>
+                    <span class="btn-sec disabled">操作作</span>
+                    <span class="btn-sec">操作操作</span>
+                    <span class="btn-more"></span>
+                </div>
+            </li>
+            <li class="bu-travel">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>680</span>
+                        <span class="status light">已出票</span>
+                    </div>
+                    <p class="tit">欧洲自选四国通票</p>
+                    <p class="desc">2015-07-15 过期</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-air">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>680</span>
+                        <span class="status">确认中</span>
+                    </div>
+                    <p class="tit">上海<i class="arrow"></i>北京</p>
+                    <p class="desc start break">2015-07-19 18:00 至 2015-07-19 23:00</p>
+                    <p class="desc-s">FU03491</p>
+                    <p class="desc end">07-21 21:00 至 07-22 03:00</p>
+                    <p class="desc-s">MU3809</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-store">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>300</span>
+                        <span class="score">+300积分</span>
+                        <span class="num">共5件</span>
+                        <span class="status light">已成交</span>
+                    </div>
+                    <div class="imgtit">
+                        <img src="" alt=""/>
+                        <img src="" alt=""/>
+                        <img src="" alt=""/>
+                        <img src="" alt=""/>
+                        <img src="" alt=""/>
+                    </div>
+                    <p class="desc">韩国站-某某旗舰店</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-store">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>300</span>
+                        <span class="num">共1件</span>
+                        <span class="status light">已成交</span>
+                    </div>
+                    <div class="imgtit">
+                        <img src="" alt=""/>
+                        <span class="name">名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称</span>
+                    </div>
+                    <p class="desc">韩国站-某某旗舰店</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-air cancel">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>680</span>
+                        <span class="status">已取消</span>
+                    </div>
+                    <p class="tit">上海<i class="arrow"></i>北京</p>
+                    <p class="desc start">07-19 18:00 至 07-19 23:00</p>
+                    <p class="desc-s">FU03491</p>
+                    <p class="desc end">07-21 21:00 至 07-22 03:00</p>
+                    <p class="desc-s">MU3809</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-ship">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>99</span>
+                        <span class="status light">已成交已成交</span>
+                    </div>
+                    <p class="tit">大连 - 烟台</p>
+                    <p class="desc">07-15 08:30 大连湾辽渔新港&ensp;出发 </p>
+                    <p class="desc-s">渤海翠珠号</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">操作</span>
+                    <span class="btn-sec">操作操作</span>
+                </div>
+            </li>
+            <li class="bu-hotel">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>887887.00</span>
+                        <span class="status light">已成交</span>
+                    </div>
+                    <p class="tit">上海宝安大酒店上海宝安大酒店</p>
+                    <p class="desc">07-15&ensp;4晚/2间</p>
+                    <p class="desc-s">浦东新区东方路800号</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">分享</span>
+                    <span class="btn-sec">删除</span>
+                    <span class="btn-road">问路卡</span>
+                </div>
+            </li>
+            <li class="bu-exchange">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>1000</span>
+                        <span class="status light">已成交</span>
+                    </div>
+                    <p class="tit">外币兑换（日元）</p>
+                    <p class="desc">现钞 50000日元</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">删除</span>
+                </div>
+            </li>
+            <li class="bu-global">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>1000</span>
+                        <span class="status">待审核</span>
+                    </div>
+                    <p class="tit">退税订单</p>
+                    <p class="desc">11-04&ensp;申请</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-sec">查看进度</span>
+                    <span class="btn-sec">查看材料</span>
+                    <span class="btn-sec">取消</span>
+                </div>
+            </li>
+        </ul>
+	</section>
+    <div style="height: 50px;">
+        <div class="show_filter_tab ">
+            <!-- 如果没有排序，也就是只有两个 tab 的时候，请加上 show_filter_tab_2 这个类名，并删掉或者隐藏掉不需要的那个 tab -->
+            <span><i class="ico_filter"></i>筛选<i class="ico_radius"></i></span> <span class="active"><i class="ico_order"></i>排序</span> <span>有效订单<i class="ico_valid"></i></span>
+        </div>
+    </div>
+	<div class="masker_layer" style="display: none;"></div>
+	<!-- order option list -->
+	<div class="order-option" style="display: none;">
+		<div class="CC-multiList-item">
+			<ul class="CC-checklist-radio CC-checklist-txt-center">
+				<li><label class="CC-radio"><input type="radio" name="checklist_1_1" checked="checked"><b class="CC-icon-sel"></b><span class="txt">预定时间</span></label></li>
+				<li><label class="CC-radio"><input type="radio" name="checklist_1_1"><b class="CC-icon-sel"></b><span class="txt">出发时间</span></label></li>
+			</ul>
+		</div>
+	</div>
+	<!-- order guidance -->
+	<div class="order-guidance" style="display: none;">
+		<i class="icon-arrow"></i>
+		<i class="icon-calendar"></i>
+		<i class="icon-button"></i>
+	</div>
+	<script>
+		(function(){
+			"use strict";
+			//演示--浮层
+			var url_search = window.location.search,
+				ele_mask = document.querySelector('.masker_layer'),
+				ele_option = document.querySelector('.order-option'),
+				ele_guidance = document.querySelector('.order-guidance');
+
+			if(url_search.indexOf('option') >= 0){
+				ele_mask.style.display='block';
+				ele_option.style.display='block';
+			}
+			if(url_search.indexOf('guidance') >= 0){
+				ele_mask.style.display='block';
+				ele_guidance.style.display='block';
+			}
+            /**/
+
+            var headTitle = $(".cm-page-select-title"),submenu = $(".submenu"),menuText = submenu.find("span"),btn = $(".cm-header-btn"),filterbtn=$(".show_filter_tab ");
+            function toggleExp(){
+                headTitle.toggleClass("expanded");
+                submenu.toggleClass("expanded");
+            }
+            headTitle.add(submenu).on("click",function(){
+                toggleExp();
+            });
+            menuText.on("click",function(){
+                var text = $(this).text().trim();
+                headTitle.text(text);
+
+                if(text=="历史订单"){
+                    btn.add(filterbtn).css({"visibility":"hidden"});
+                }else if(text=="一年内订单"){
+                    btn.add(filterbtn).css({"visibility":""});
+                }
+
+            });
+
+
+		})();
+	</script>
+</body>
+</html>
+<!--
+/****控制小图标的所有类名****/
+bu-hotel /*酒店*/
+bu-air /*机票*/}
+bu-train /*火车票*/
+bu-travel /*旅游*/
+bu-ticket /*门票*/
+bu-group /*团购*/
+bu-taxi /*出租车*/
+bu-cruise /*游轮*/
+bu-walker /*自由行*/
+bu-scenic /*景酒*/
+bu-car /*用车*/
+bu-gift /*礼品卡*/
+bu-busticket /*汽车票*/
+bu-visa /*签证*/
+bu-local /*当地玩乐*/
+bu-high /*高端商户*/
+bu-insurance /*保险*/
+bu-hhtravel /*HH Travel*/
+bu-bus /*机场巴士*/
+bu-store /*礼品卡商城*/
+bu-global /*全球购*/
+bu-ship /*船票*/
+bu-exchange /*外币兑换*/
+-->
