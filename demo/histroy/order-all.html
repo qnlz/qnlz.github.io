@@ -19,7 +19,6 @@
 		</div>
 	</div>
 	<section class="order-wrap-all">
-        <div class="loading-item-t1" style="display: none;">刷新中&nbsp;&nbsp;今天&nbsp;00:00</div>
         <ul class="order-list-all" style=""><!--请把500px改成设备的高度-->
             <li class="bu-hotel">
                 <i class="inset-radius-left"></i>
@@ -245,18 +244,21 @@
             /**/
             var list = $(".order-list-all"),item = list.find("li"),button = $(".btn-trigger-loading"),modItem = item.filter(":gt(3)"),btnsec = modItem.find(".btn-sec").remove().end().find(".btn-road").remove();
 
+            var loading = $('<div class="loading-mini run"></div>');
+
             modItem.css({"-webkit-transform":"translateY(200px)","-webkit-transition":"transform .4s","transform":"translateY(200px)","transition":"transform .4s"}).remove();
 
             button.on("click",function(){
                 /*show loading*/
                 button.remove();
-
+                list.append(loading);
                 list.append(modItem);
                 /*show modItem*/
                 setTimeout(function(){
-                    $('body').animate({scrollTop:"420"},300);
+                    loading.hide();
+                    $('body').animate({scrollTop:"453"},300);
                     modItem.css({"-webkit-transform":"translateY(0)","transform":"translateY(0)"});
-                },10);
+                },1000);
             });
 
 
