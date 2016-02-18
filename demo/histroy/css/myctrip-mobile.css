@@ -4430,6 +4430,6 @@ input::-ms-expand {
 }
 /*如何添加通知中心小工具===end===*/
 .btn-trigger-loading{    width: 120px; height: 30px; margin: 20px auto; border: 1px solid #099fde; border-radius: 3px; text-align: center; line-height: 30px; color: #099fde;}
-.submenu{padding: 15px 0; position: fixed; top: 44px; z-index: 99; background: #fff; width: 100%; box-shadow: 0 1px 4px rgba(0,0,0,.1); -webkit-transform: translateY(-100%); -webkit-transition: transform .3s; transform: translateY(-100%); transition: transform .3s;}
-.submenu span{float: left;background-color: #fff; color: #099fde; box-sizing: border-box; width: 40%; margin: 0 5%; height: 26px; line-height: 26px; text-align: center; padding: 0 6px; border: 1px solid  #dbdbdb; border-radius: 3px; -webkit-border-radius: 3px;}
+.submenu{position: fixed; top: 44px; z-index: 99; background: #fff; width: 100%; box-shadow: 0 1px 4px rgba(0,0,0,.1); -webkit-transform: translateY(-100%); -webkit-transition: transform .3s; transform: translateY(-100%); transition: transform .3s;}
+.submenu span{ display: block; color: #099fde; height: 46px; line-height: 46px; text-align: center;}
 .submenu.expanded{-webkit-transform: translateY(0); transform: translateY(0);}

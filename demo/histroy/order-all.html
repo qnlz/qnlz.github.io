@@ -21,7 +21,7 @@
 	<section class="order-wrap-all">
         <div class="loading-item-t1" style="display: none;">刷新中&nbsp;&nbsp;今天&nbsp;00:00</div>
         <ul class="order-list-all" style=""><!--请把500px改成设备的高度-->
-            <li class="bu-hotel active">
+            <li class="bu-hotel">
                 <i class="inset-radius-left"></i>
                 <i class="inset-radius-right"></i>
                 <div class="cont">
@@ -76,6 +76,25 @@
                     <span class="btn-sec">操作操作</span>
                 </div>
             </li>
+            <li class="bu-hotel">
+                <i class="inset-radius-left"></i>
+                <i class="inset-radius-right"></i>
+                <div class="cont">
+                    <div class="rcon">
+                        <span class="pri"><dfn>&yen;</dfn>887</span>
+                        <span class="status">待支付</span>
+                    </div>
+                    <p class="tit">Villa Berawa(本拉瓦别墅酒店)</p>
+                    <p class="desc">11-25 至 11-27&emsp;2晚/1间 </p>
+                    <p class="desc-s">Jalan Pantai Berwa, B anjar Berwa</p>
+                </div>
+                <div class="oper">
+                    <span class="btn-pri">去付款</span>
+                    <span class="btn-sec">操作操作</span>
+                    <span class="btn-sec">操作操</span>
+                    <span class="btn-sec">操作操</span>
+                </div>
+            </li>
             <li class="bu-air">
                 <i class="inset-radius-left"></i>
                 <i class="inset-radius-right"></i>
@@ -92,52 +111,6 @@
                 </div>
                 <div class="oper">
                     <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作操作</span>
-                </div>
-            </li>
-            <li class="bu-store">
-                <i class="inset-radius-left"></i>
-                <i class="inset-radius-right"></i>
-                <div class="cont">
-                    <div class="rcon">
-                        <span class="pri"><dfn>&yen;</dfn>300</span>
-                        <span class="score">+300积分</span>
-                        <span class="num">共5件</span>
-                        <span class="status light">已成交</span>
-                    </div>
-                    <div class="imgtit">
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                    </div>
-                    <p class="desc">韩国站-某某旗舰店</p>
-                </div>
-                <div class="oper">
-                    <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作作</span>
-                    <span class="btn-sec">操作操作</span>
-                </div>
-            </li>
-            <li class="bu-store">
-                <i class="inset-radius-left"></i>
-                <i class="inset-radius-right"></i>
-                <div class="cont">
-                    <div class="rcon">
-                        <span class="pri"><dfn>&yen;</dfn>300</span>
-                        <span class="num">共1件</span>
-                        <span class="status light">已成交</span>
-                    </div>
-                    <div class="imgtit">
-                        <img src="" alt=""/>
-                        <span class="name">名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称</span>
-                    </div>
-                    <p class="desc">韩国站-某某旗舰店</p>
-                </div>
-                <div class="oper">
-                    <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作作</span>
                     <span class="btn-sec">操作操作</span>
                 </div>
             </li>
@@ -270,7 +243,7 @@
 				ele_guidance.style.display='block';
 			}
             /**/
-            var list = $(".order-list-all"),item = list.find("li"),button = $(".btn-trigger-loading"),modItem = item.filter(":gt(2)");
+            var list = $(".order-list-all"),item = list.find("li"),button = $(".btn-trigger-loading"),modItem = item.filter(":gt(3)"),btnsec = modItem.find(".btn-sec").remove().end().find(".btn-road").remove();
 
             modItem.css({"-webkit-transform":"translateY(200px)","-webkit-transition":"transform .4s","transform":"translateY(200px)","transition":"transform .4s"}).remove();
 
@@ -281,6 +254,7 @@
                 list.append(modItem);
                 /*show modItem*/
                 setTimeout(function(){
+                    $('body').animate({scrollTop:"420"},300);
                     modItem.css({"-webkit-transform":"translateY(0)","transform":"translateY(0)"});
                 },10);
             });

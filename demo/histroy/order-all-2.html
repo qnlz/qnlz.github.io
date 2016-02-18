@@ -15,17 +15,16 @@
             <span class="icon-back fl cm-header-icon"></span>
             <span class="fr cm-header-btn">地图</span>
             <span class="fr cm-header-btn">日历</span>
-            <h1 class="cm-page-select-title">一年内订单</h1>
+            <h1 class="cm-page-select-title">全部订单</h1>
         </div>
         <div class="submenu">
-            <span>一年内订单</span>
             <span>历史订单</span>
         </div>
 	</div>
 	<section class="order-wrap-all">
         <div class="loading-item-t1" style="display: none;">刷新中&nbsp;&nbsp;今天&nbsp;00:00</div>
         <ul class="order-list-all" style=""><!--请把500px改成设备的高度-->
-            <li class="bu-hotel active">
+            <li class="bu-hotel">
                 <i class="inset-radius-left"></i>
                 <i class="inset-radius-right"></i>
                 <div class="cont">
@@ -96,52 +95,6 @@
                 </div>
                 <div class="oper">
                     <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作操作</span>
-                </div>
-            </li>
-            <li class="bu-store">
-                <i class="inset-radius-left"></i>
-                <i class="inset-radius-right"></i>
-                <div class="cont">
-                    <div class="rcon">
-                        <span class="pri"><dfn>&yen;</dfn>300</span>
-                        <span class="score">+300积分</span>
-                        <span class="num">共5件</span>
-                        <span class="status light">已成交</span>
-                    </div>
-                    <div class="imgtit">
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                        <img src="" alt=""/>
-                    </div>
-                    <p class="desc">韩国站-某某旗舰店</p>
-                </div>
-                <div class="oper">
-                    <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作作</span>
-                    <span class="btn-sec">操作操作</span>
-                </div>
-            </li>
-            <li class="bu-store">
-                <i class="inset-radius-left"></i>
-                <i class="inset-radius-right"></i>
-                <div class="cont">
-                    <div class="rcon">
-                        <span class="pri"><dfn>&yen;</dfn>300</span>
-                        <span class="num">共1件</span>
-                        <span class="status light">已成交</span>
-                    </div>
-                    <div class="imgtit">
-                        <img src="" alt=""/>
-                        <span class="name">名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称产品名称</span>
-                    </div>
-                    <p class="desc">韩国站-某某旗舰店</p>
-                </div>
-                <div class="oper">
-                    <span class="btn-sec">操作</span>
-                    <span class="btn-sec">操作作</span>
                     <span class="btn-sec">操作操作</span>
                 </div>
             </li>
@@ -275,6 +228,8 @@
             /**/
 
             var headTitle = $(".cm-page-select-title"),submenu = $(".submenu"),menuText = submenu.find("span"),btn = $(".cm-header-btn"),filterbtn=$(".show_filter_tab ");
+            var btnsec = $(".btn-sec").add($(".btn-road")).add($(".btn-pri")).add($(".btn-more"));
+
             function toggleExp(){
                 headTitle.toggleClass("expanded");
                 submenu.toggleClass("expanded");
@@ -282,14 +237,18 @@
             headTitle.add(submenu).on("click",function(){
                 toggleExp();
             });
-            menuText.on("click",function(){
-                var text = $(this).text().trim();
-                headTitle.text(text);
 
-                if(text=="历史订单"){
+            menuText.on("click",function(){
+                var text_menu = $(this).text().trim(),text_title =  headTitle.text();
+                headTitle.text(text_menu);
+                $(this).text(text_title);
+
+                if(text_menu=="历史订单"){
                     btn.add(filterbtn).css({"visibility":"hidden"});
-                }else if(text=="一年内订单"){
+                    btnsec.hide();
+                }else if(text_menu=="全部订单"){
                     btn.add(filterbtn).css({"visibility":""});
+                    btnsec.show();
                 }
 
             });
