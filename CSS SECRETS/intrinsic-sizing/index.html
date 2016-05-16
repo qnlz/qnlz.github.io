@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>自适应内部元素</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<style type="text/css" media="screen">
+	/**
+	 * Intrinsic sizing
+	 */
+
+	figure {
+		max-width: 300px;   /*给旧版本提供平稳回退样式 */
+		max-width: min-content;
+		margin: auto;
+	}
+
+	figure > img { max-width: inherit; }
+
+	/* Basic styling */
+
+	figure {
+		padding: 10px;
+		border: 1px solid silver;
+	}
+
+	dl{
+		position: absolute;
+		width:500px;
+		top:10px;
+		right: 10px;
+		background: #ffc7c7;
+		padding: 10px;
+	}
+	dt{
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	dd{
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+</head>
+<body>
+	<p>Let’s assume we have some text here. Bacon ipsum dolor sit amet turkey veniam shankle, culpa short ribs kevin t-bone occaecat.</p>
+<figure>
+	<img src="img/adamcatlace.jpg" />
+	<figcaption>
+		The great Sir Adam Catlace was named after Countess Ada Lovelace, the first programmer ever.
+	</figcaption>
+</figure>
+<figure>
+	<img src="img/adamcatlace_small.jpg" />
+	<figcaption>
+		The great Sir Adam Catlace was named after Countess Ada Lovelace, the first programmer ever.
+	</figcaption>
+</figure>
+<p>We also have some more text here. Et laborum venison nostrud, ut veniam sint kielbasa ullamco pancetta.</p>
+
+
+<dl>
+	<dt>CSS内部与外部尺寸模型为width和height定义了一些新的关键字:</dt>
+	<dd>1、min-content:容器内部最大的不可断行元素的宽度（最宽的单词、图片或具有固定宽度的盒元素）;</dd>
+	<dd>2、max-content:它的行为类似于display:inline-block;</dd>
+	<dd>2、fit-content:它的行业类似于float:left;</dd>
+</dl>
+</body>
+</html>

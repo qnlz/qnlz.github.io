@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>精确控制表格列宽</title>
+	<style type="text/css" media="screen">
+	/**
+	 * Taming table column widths
+	 */
+
+	body {
+		background: #ddd;
+		font:14px/1.5 "Microsoft yahei";
+	}
+
+	section {
+		float: left;
+		width: 500px;
+		margin: 2em;
+		background: white;
+	}
+
+	table {
+		border-collapse: collapse;
+		margin-bottom: 1em;
+		width: 100%;
+	}
+
+	section + section table { table-layout: fixed; 	}
+
+	td {
+		border: 1px solid #aaa;
+	}
+
+	td.preformatted {
+		white-space: pre;
+		font-family: Consolas, Monaco, monospace;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	dl{
+		position: absolute;
+		top:10px;
+		right: 10px;
+		background: #ffc7c7;
+		padding: 10px;
+	}
+	dt{
+		font-weight: bold;
+		margin-bottom: 5px;
+	}
+	dd{
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+</head>
+<body>
+<section>
+	<h1>With table-layout: auto</h1>
+	<div>
+		<table>
+			<tr>
+				<td>如果我们不......</td>
+				<td>指定单元格的宽度，则这些单元格则会根据他们内容的长短来分配宽度。也就是说内容较长的单元格所能分配到的宽度也比较多</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>如果我们不......</td>
+				<td>指定单元格的宽度，则这些单元格则会根据他们内容的长短来分配宽度。也就是说内容较长的单元格所能分配到的宽度也比较多</td>
+			</tr>
+			<tr>
+				<td>表格的每一行都会参与到列宽的计算中，而不仅是第一行</td>
+				<td>注意，这个表格的列宽分配结果跟上面那个表格不同</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td style="width: 1000px">即使我们会单元格指定了宽度，也未必会得到对应的结果。比如这个单元格的宽度被指定为1000px</td>
+				<td style="width: 2000px">而这个单元格的宽度被指定为2000px。由于外层容器所以提供的空间远远不足3000px，这两个单元格的宽度会按比例缩小，分别得到总宽度的33.3和66.6%</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>如果我们禁止文本折行行为, 那么表格宽度可能会远远超出其容器的宽度</td>
+				<td class="preformatted">而且 <code>text-overflow: ellipsis</code> 对此也无能为力，这一点很遗憾</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>大图片或代码块也可能会导致同样的问题</td>
+				<td><img src="img/panoramic.jpg" /></td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<section>
+	<h1>With table-layout: fixed</h1>
+	<div>
+		<table>
+			<tr>
+				<td>如果我们不......</td>
+				<td>指定单元格的宽度，则这些单元格则会根据他们内容的长短来分配宽度。也就是说内容较长的单元格所能分配到的宽度也比较多</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>如果我们不......</td>
+				<td>指定单元格的宽度，则这些单元格则会根据他们内容的长短来分配宽度。也就是说内容较长的单元格所能分配到的宽度也比较多</td>
+			</tr>
+			<tr>
+				<td>表格的每一行都会参与到列宽的计算中，而不仅是第一行</td>
+				<td>注意，这个表格的列宽分配结果跟上面那个表格不同</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td style="width: 1000px">即使我们会单元格指定了宽度，也未必会得到对应的结果。比如这个单元格的宽度被指定为1000px</td>
+				<td style="width: 2000px">而这个单元格的宽度被指定为2000px。由于外层容器所以提供的空间远远不足3000px，这两个单元格的宽度会按比例缩小，分别得到总宽度的33.3和66.6%</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>如果我们禁止文本折行行为, 那么表格宽度可能会远远超出其容器的宽度</td>
+				<td class="preformatted">而且 <code>text-overflow: ellipsis</code> 对此也无能为力，这一点很遗憾</td>
+			</tr>
+		</table>
+		
+		<table>
+			<tr>
+				<td>大图片或代码块也可能会导致同样的问题</td>
+				<td><img src="img/panoramic.jpg" /></td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<dl>
+	<dt>应用table-layout:fixed之后的效果:</dt>
+	<dd>1、如果不指定任何宽度，则各列的宽度是平均分配的；</dd>
+	<dd>2、后序的表格行并不会影响列宽</dd>
+	<dd>3、给单元格指定很大的宽度也会直接生效，并不会自动缩小；</dd>
+	<dd>4、overflow 和 text-overflow属性都是可以正常生效的；</dd>
+	<dd>5、如果overflow的值是visible，则单元格的内容有可能会溢出；</dd>
+</dl>
+</body>
+</html>
