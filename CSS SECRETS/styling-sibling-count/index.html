@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>根据兄弟元素的数量来设置样式</title>
+	<style type="text/css" media="screen">
+		ul,li{
+			list-style: none;
+		}
+		ul{
+			display: table;
+		}
+		li{
+			float: left;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+			color: #fff;
+			background-color: #ccc;
+			border-radius: 3px;
+			margin-right: 3px;
+		}
+		li:first-child:last-child{
+			/*只一个列表项时的样式*/
+		}
+
+		li:first-child:nth-last-child(4){
+			/*一个正好有4个列表项中的第一个列表项*/
+		}
+
+		li:first-child:nth-last-child(4),
+		li:first-child:nth-last-child(4)~li{
+			/*当列表正好包含4项时，命中所有列表项*/
+			/*background-color: blue;*/
+		}
+
+
+		li:nth-child(n+4){
+			/*选中除了第一、二、三个子元素之外的其他元素*/
+		}
+		li:first-child:nth-last-child(n+4),
+		li:first-child:nth-last-child(n+4)~li{
+			/*当列表项至少包含4项时，命中所有列表项*/
+			background-color: #000;
+		}
+		li:first-child:nth-last-child(-n+4)，
+		li:first-child:nth-last-child(-n+4)~li{
+			/*当列表项最多包含4项时，命中所有列表项*/
+			/*background-color: green;*/
+		}
+
+		li:first-child:nth-last-child(n+2):nth-last-child(-n+6),
+		li:first-child:nth-last-child(n+2):nth-last-child(-n+6)~li{
+			/*当列表包含2-6项时，命中所有列表项*/
+			/*background-color: yellow;*/
+		}
+
+	</style>
+</head>
+<body>
+
+<ul>
+	<li>1</li>
+</ul>
+
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+</ul>
+
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+</ul>
+	
+</body>
+</html>
