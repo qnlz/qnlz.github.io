@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>基于Flexbox的解决方案</title>
+	<style type="text/css" media="screen">
+		/**
+		 * Vertical centering - Flexbox solution
+		 */
+
+		* { margin: 0; }
+
+		body {
+			display: flex;
+			min-height: 100vh;
+		}
+
+		main {
+			padding: 1em 2em;
+			margin: auto;
+			box-sizing: border-box;
+			background: #655;
+			color: white;
+			text-align: center;
+		}
+
+		/*main{
+			display: flex;
+			align-items:center;
+			justify-content: center;
+			width: 18em;
+			height: 10em;
+		}*/
+
+		h1 {
+			margin-bottom: .2em;
+			font-size: 150%;
+		}
+
+		body {
+			background: #fb3;
+			font: 100%/1.5 sans-serif;
+		}
+
+		dl{
+			position: absolute;
+			width: 500px;
+			top:10px;
+			right: 10px;
+			background: #ffc7c7;
+			padding: 10px;
+		}
+		dt{
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		dd{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Am I centered yet?</h1>
+		<p>Center me, please!</p>
+		<p><img src="img/adamcatlace_small.jpg" alt=""></p>
+	</main>
+
+	<!-- <main>
+		Am I centered yet?
+	</main> -->
+
+	<dl>
+		<dt>使用Flexbox：</dt>
+		<dd>1、先给这个待居中元素的父元素设置 display:flex</dd>
+		<dd>2、再给这个元素自身设置margin:auto</dd>
+		<dt>注意：</dt>
+		<dd>1、当我们使用flexbox时，margin:auto不仅在水平方向上将元素居中，垂直方向上也是如此；</dd>
+		<dd>2、可以将匿名标签（即没有被标签包裹的文本节点）垂直居中。</dd>
+	</dl>
+</body>
+</html>
