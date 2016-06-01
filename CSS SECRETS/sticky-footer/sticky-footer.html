@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>紧贴底部的页脚</title>
+	<style type="text/css" media="screen">
+		/**
+		 * Sticky footer with flexible height
+		 */
+		 
+		body {
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+
+		main {
+			flex: 1;
+		}
+
+		/* Toggle checkbox to alternate between short/long content */
+		#contents:checked ~ p { display: none ;}
+
+		/* Basic styling */
+		body {
+			margin: 0;
+			font: 100%/1.5 Baskerville, Palatino Linotype, Palatino, serif;
+		}
+
+		h1 { margin: .5em 0 0; }
+
+		header { text-align: center; height: 3em; }
+
+		main, footer {
+			display: block;
+			padding: .5em calc(50% - 400px);
+		}
+
+		footer {
+			background: linear-gradient(#222, #444);
+			color: white;
+		}
+
+		dl{
+			position: absolute;
+			top:10px;
+			right: 10px;
+			background: #ffc7c7;
+			padding: 10px;
+		}
+		dt{
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		dd{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<h1>Site name</h1>
+</header>
+<main>
+	<input type="checkbox" id="contents" /><label for="contents">Toggle contents</label>
+	<p>Bacon ipsum dolor sit amet turkey veniam shankle, culpa short ribs kevin t-bone occaecat. Et laborum venison nostrud, ut veniam sint kielbasa ullamco pancetta. Qui drumstick tail, bacon leberkas shoulder capicola laborum. Minim ipsum bacon, mollit laboris t-bone pariatur. Ham hock reprehenderit sint beef, sausage pig eiusmod t-bone shankle strip steak.</p>
+	<p>Cow enim excepteur, boudin dolore lorem magna fugiat consequat voluptate. Picanha fugiat chicken, cupim aliquip magna filet mignon prosciutto ut nostrud. Kielbasa rump frankfurter sunt corned beef. Andouille in cillum deserunt, rump et picanha landjaeger tongue anim.</p>
+	<p>Ad meatball ipsum ground round shank. Quis ipsum meatball exercitation. Laborum swine spare ribs, sunt ball tip magna t-bone venison. Velit doner voluptate non occaecat do ribeye kevin strip steak et. Esse biltong shank ribeye dolor pariatur aute deserunt non est eiusmod pork belly pancetta pork chop. Pork chop id consectetur rump, meatball short loin brisket tail andouille deserunt alcatra irure prosciutto do.</p>
+	<p>Dolore reprehenderit ex, meatball doner commodo consectetur ea ribeye. Ad aliqua kevin, chuck excepteur minim et cow esse ham hock landjaeger. Alcatra bresaola dolore tempor do, excepteur in velit flank officia dolore meatloaf corned beef picanha. Eu pancetta brisket eiusmod ipsum aute sausage, culpa rump shoulder excepteur nostrud venison sed pork loin. Tempor proident do magna ground round. Ut venison frankfurter et veniam dolore. Pig pork belly beef ribs kevin, doner exercitation magna esse shankle.</p>
+	<p>Flank anim chuck boudin id consectetur bresaola ham pork loin cupim andouille frankfurter. Proident do ball tip nostrud nulla sed, frankfurter ut commodo corned beef ut. Ex aute in, pig deserunt beef ribs turducken pastrami irure ball tip pork belly pork chop sausage id. Chicken sunt nisi tempor sed. In eiusmod non fatback tempor tenderloin pastrami adipisicing cow lorem ut tail jerky cupidatat venison. Jowl consequat commodo pork loin ipsum pork belly prosciutto aute beef. Ball tip shoulder aliqua, fugiat landjaeger kevin pork chop beef ribs leberkas hamburger cillum turkey ut doner culpa.</p>
+</main>
+<footer>
+	<p>© 2015 No rights reserved.</p>
+	<p>Made with ♥ by an anonymous pastafarian.</p>
+</footer>
+
+<dl>
+	<dt>flex行布局</dt>
+	<dd>1、当父元素设置display:flex之后，就可以对其子元素触发“伸缩盒布局模型”；</dd>
+	<dd>2、需要把flex-flow设置为column,否则子元素会被水平排在一行上；</dd>
+	<dt>用例：</dt>
+	<dd>1、伸缩在小于一屏的时候发生，所以需要把body的最小高度设为视口的高度即100vh；</dd>
+	<dd>2、页头和页脚的高度由其内部因素来决定，而内容区块的高度可以自动伸展并占满所有的可用空间。</dd>
+	<dt>小提示</dt>
+	<dd>1、这个flex属性实际上是flex-grow、flex-shrink和flex-basis的简写语法。</dd>
+	<dd>2、任何元素只要设置了一个大于0的flex值，就将获得可伸缩的特性；</dd>
+	<dd>3、flex的值负责控制多个可伸缩元素之间的尺寸分配比例； </dd>
+</dl>
+
+</body>
+</html>
