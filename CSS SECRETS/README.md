@@ -1,5 +1,13 @@
-《CSS揭秘》demo
+# 《CSS揭秘》demo #
 ==============
+# 第八章 过渡与动画 #
+1. 缓动效果 
+2. 逐帧动画
+3. 闪烁效果
+4. 打字动画
+5. 状态平滑的动画
+6. 沿环形路径平移的动画
+
 #第七章 结构与布局  #
 1. [自适应内部元素](http://qnlz.github.io/CSS%20SECRETS/intrinsic-sizing/)
 2. [精确控制表格列宽](http://qnlz.github.io/CSS%20SECRETS/table-column-widths/)
@@ -55,6 +63,6 @@
 7. 伪随机背景
 8. 连续的图像边框
 
-# 第二章 引言 #
+# 第一章 引言 #
 1. WEB标准：是敌还是友
 2. CSS编码技巧
