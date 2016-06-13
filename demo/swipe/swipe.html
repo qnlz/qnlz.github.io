@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title></title>
+	<style type="text/css" media="screen">
+		body{
+			box-sizing: border-box;
+			margin: 0;
+		}
+		.wrap{
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		header{
+			height: 100px;
+			background: #f00;
+			text-align: center;
+			line-height: 100px;
+			-webkit-transition: all .3s;
+			transition: all .3s;
+		}
+		header.open{
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			background: #00f;
+		}
+
+		section{
+			height: 600px;
+			background: #ff0;
+			text-align: center;
+			line-height: 300px;
+			-webkit-transition: all .5s;
+			transition: all .5s;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<header id="header" class="">
+		这里是图片
+	</header><!-- /header -->
+
+	<section>
+		这里是内容
+	</section>
+</div>
+
+</body>
+</html>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script type="text/javascript">
+	    $(function() {      
+      //Enable swiping...
+      $(".wrap").swipe( {
+        //Generic swipe handler for all directions
+        swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+          // $(this).text("You swiped " + direction );  
+          if(direction=="down"){
+          	$("header").addClass("open");
+          }else if(direction=="up"){
+          	$("header").removeClass("open");
+          }
+
+        },
+        //Default is 75px, set to 0 for demo so any distance triggers swipe
+         threshold:0
+      });
+    });
+  
+
+</script>
