@@ -23,3 +23,8 @@ css实现阴影的多种情况
 5. [楼层电梯导航](http://qnlz.github.io/demo/lift.html)
 ---------------------
 主要知识点：offset().top   scrollTop()
+
+
+6. [模拟手势下拉图片整屏](http://qnlz.github.io/demo/swipe/swipe.html)
+---------------------
+主要知识点：touchSwipe插件
