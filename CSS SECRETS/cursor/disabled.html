@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选用合适的鼠标光标同——使用not-allowed光标来提示某个控件已被禁用</title>
+	<style type="text/css" media="screen">
+		/**
+		 * Indicating disabled state
+		 */
+
+		:disabled, [disabled], [aria-disabled="true"] {
+			cursor: not-allowed;
+			padding: 0;
+		}
+		dl{
+			position: absolute;
+			width: 500px;
+			top:10px;
+			right: 10px;
+			background: #ffc7c7;
+			padding: 10px;
+		}
+		dt{
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+		dd{
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<button>Button</button>
+	<button disabled>Disabled button</button>
+<dl>
+	<dd>如果要提示某个控件因某些原因而变得无法交互（即控件已被禁用），用这个光标就再合适不过了</dd>
+</dl>
+</body>
+</html>
