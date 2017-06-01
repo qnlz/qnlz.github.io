@@ -28,3 +28,7 @@ css实现阴影的多种情况
 6. [模拟手势下拉图片整屏](http://qnlz.github.io/demo/swipe/swipe.html)
 ---------------------
 主要知识点：touchSwipe插件
+
+7. [CSS3路径动画](http://qnlz.github.io/demo/motion-path.html)
+---------------------
+主要知识点：motion-path
